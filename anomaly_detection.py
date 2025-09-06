@@ -132,7 +132,7 @@ class AnomalyDetector:
         }
         
         # Local Outlier Factor
-        lof_pred = self.models['lof'].predict(self.features_scaled)
+        lof_pred = self.models['lof'].fit_predict(self.features_scaled)
         lof_scores = self.models['lof'].negative_outlier_factor_
         self.anomaly_scores['lof'] = {
             'predictions': lof_pred,
